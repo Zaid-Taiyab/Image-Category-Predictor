@@ -48,7 +48,7 @@ for epoch in range(num_epochs):
 torch.save(model.state_dict(), 'model.pth')
 print("Model saved!")
 
-# ---- Loading the model in future runs ----
+# Loading the model in future runs 
 
 # Check if the model exists and load it
 if os.path.exists('model.pth'):
@@ -58,11 +58,11 @@ if os.path.exists('model.pth'):
 else:
     print("Model file not found. Training from scratch.")
 
-# ---- Image Prediction ----
+# Image Prediction 
 
-# Load and preprocess the image (ensure it's in RGB format)
+# Load and preprocess the image (ensuring it's in RGB format)
 image_path = 'Image-to-text.png'
-image = Image.open(image_path).convert('RGB')  # Ensure image is in RGB format
+image = Image.open(image_path).convert('RGB')  # Ensuring image is in RGB format
 image = transform(image).unsqueeze(0)  # Add batch dimension (1, C, H, W)
 image = image.to(device)
 
